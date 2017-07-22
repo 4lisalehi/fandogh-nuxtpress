@@ -3,15 +3,15 @@
     <div>
       <logo/>
       <h1 class="title">
-        دیجیاتو
+        Wptavern
       </h1>
       <h2 class="subtitle">
-        آخرین نظرات کاربران
+        Comments
       </h2>
       <div class="comments">
         <div class="comment-div" v-for="comment in comments" v-bind:key="comment.id">
-          <img v-bind:src="comment.author_avatar_urls" />
-          <span class="user">کاربر: {{ comment.author }} </span>
+          <img v-bind:src="comment.author_avatar_urls[0]" />
+          <span class="user">{{ comment.author_name }}</span>
           <span class="time">{{ comment.time_ago }}</span>
           <span class="content" v-html="comment.content.rendered"></span>
         </div>
@@ -36,7 +36,7 @@ export default {
     Logo
   },
   async asyncData ({params}) {
-    let { data } = await axios.get(`http://digiato.com/wp-json/wp/v2/comments`)
+    let { data } = await axios.get(`https://wptavern.com/wp-json/wp/v2/comments`)
     return { comments: data }
   }
 }
@@ -76,57 +76,4 @@ export default {
 .links nuxt-link{
     margin-left: 15px;
 }
-
-.comments{
-  direction: rtl;
-  display: block;
-}
-
-.comment-div{
-    display: block;
-    width : 1100px;
-    min-height: 220px;
-    border-radius: 4px;
-    padding: 10px 30px;
-    margin-top: 70px;
-    position: relative;
-    text-align: right;
-    box-shadow: 5px 5px 5px #888888;
-}
-
-.comment-div span{
-    position: absolute;
-}
-
-.comment-div img{
-  width: 90px;
-  height: 90px;
-  right: 15px;
-  top: 15px;
-  float: right;
-  border: 1px solid grey;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-.comment-div span.content{
-    display: inline-block;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 16px;
-    right: 140px;
-    width: 820px;
-    direction: rtl;
-    text-align: justify;
-}
-
-.comment-div span.user{
-    top: 15;
-    left: 15px;
-}
-
-.comment-div span.time{
-    bottom: 15px;
-    left: 15px;
-}
-
 </style>
