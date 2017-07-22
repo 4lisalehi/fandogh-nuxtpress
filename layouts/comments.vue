@@ -51,6 +51,53 @@ html
   background-color: #35495e;
 }
 
+.comments{
+  display: block;
+}
 
+.comment-div{
+    display: block;
+    width : 1100px;
+    min-height: 220px;
+    border-radius: 4px;
+    padding: 10px 30px;
+    margin-top: 70px;
+    position: relative;
+    text-align: left;
+    box-shadow: 5px 5px 5px #888888;
+}
 
+.comment-div span{
+    position: absolute;
+}
+
+.comment-div img{
+  width: 90px;
+  height: 90px;
+  right: 15px;
+  top: 15px;
+  float: left;
+  border: 1px solid grey;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.comment-div span.content{
+    display: inline-block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    left: 140px;
+    width: 820px;
+    text-align: justify;
+}
+
+.comment-div span.user{
+    top: 15;
+    left: 15px;
+}
+
+.comment-div span.time{
+    bottom: 15px;
+    left: 15px;
+}
 </style>
