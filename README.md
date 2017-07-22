@@ -1,6 +1,6 @@
 # fandogh-nuxtpress
 My first Nuxt.js project in which I've used WordPress Rest API.
-Using axios I retrieve JSON of posts & comments of WPTarven blog and render it to the user using Vue.js.
+Using axios I retrieve JSON of posts & comments of WPTavern blog and render it to the user using Vue.js.
 
 Currently the project includes Three main pages:
 
